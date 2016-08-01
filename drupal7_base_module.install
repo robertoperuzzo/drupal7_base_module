@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ * drupal7_base_module.install
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupal7_base_module_install() {
+}
+
+
+/**
+ * Implements hook_disable().
+ */
+function drupal7_base_module_disable() {
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function drupal7_base_module_uninstall() {
+}
+

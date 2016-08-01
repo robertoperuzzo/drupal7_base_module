@@ -1,0 +1,47 @@
+<?php
+/**
+ * @author
+ * Your name <your@emailaddress.is>
+ *
+ * @file
+ * drupal7_base_module.module
+ *
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function drupal7_base_module_menu() {
+  $items = array();
+  $items['admin/commerce/config/aqua-module'] = array(
+    'title' => 'Module setting page',
+    'description' => 'Here you can describe your setting page.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupal7_base_module_setting_page'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+   );
+  return $items;
+}
+
+/**
+ * Callback.
+ */
+function drupal7_base_module_setting_page($form, $form_state) {
+
+  $form['my_text_field'] = array(
+    '#type' => 'text',
+    '#title' => t('Account ID'),
+    '#default_value' => variable_get('my_text_field_default_value', ''),
+    '#description' => t("Insert......"),
+    '#weight' => -15,
+    //'#required' => TRUE,
+  );
+
+  /**
+   * @todo creare tutti i campi per inserire i dati utente per autenticarsi
+   */
+
+  return system_settings_form($form);
+}
